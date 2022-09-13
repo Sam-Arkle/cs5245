@@ -15,7 +15,7 @@ print(f'The new range is ({min_value}, {max_value}).')
 number_of_samples = len(twice_amplitude)
 time_axis = [x / rate for x in range(0, number_of_samples)]
 plt.plot(time_axis, twice_amplitude)
-plt.xlabel('Time seconds')
+plt.xlabel('Time (seconds)')
 plt.ylabel('sound pressure level')
 plt.title(f'Waveform for {wav_file} with twice amplitude')
 plt.show()

@@ -10,7 +10,7 @@ print(f'There are {number_of_samples} samples.\nThe sample rate is {rate} sample
       f'{number_of_samples / rate:.3f} seconds long.')
 time_axis = [x / rate for x in range(0, number_of_samples)]
 plt.plot(time_axis, data)
-plt.xlabel('Time seconds')
+plt.xlabel('Time (seconds)')
 plt.ylabel('sound pressure level')
 plt.title(f'Waveform for {wav_file}')
 plt.show()
