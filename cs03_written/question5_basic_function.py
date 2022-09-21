@@ -6,6 +6,17 @@ def sum_positive(a):
     return sum_
 
 
+def odds(a):
+    return [x for x in a if x % 2 != 0]
+
+
+print(odds([1, 2, 3, 4]))
+
+
+def sum_positive_comprehenion(a):
+    return sum([x for x in a if x >= 0])
+
+
 # a = [1, 2, 3, -6]
 # print(sum_positive(a))
 # print(sum_positive([3, -3, 5, 2, -1, 2]))
