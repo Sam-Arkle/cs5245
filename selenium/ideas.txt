@@ -1,0 +1,21 @@
+Potential things to scrape
+Who won (result)
+goals scored
+attendance
+number of cards
+number of fouls
+number of tackles
+amount of extra time
+should probably do the above on a by team basis
+possession?
+
+
+==============================================
+
+Selenium scraping through fbref:
+Can go from 'master' page https://fbref.com/en/squads/1df6b87e/Sheffield-United-Stats
+go down the relevant table and pick up who was played, attendance, result, date, whether match was home/away, possession stats,
+Need to go into the match report and scrape yellow cards per side, fouls and tackles
+Certain stats should look for and if not found report as zero (attendance, fouls, cards...)
+
+Home or away is important as it will make it easier to determine what the attendance is as a percentage of the max value.
