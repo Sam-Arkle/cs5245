@@ -7,6 +7,7 @@
 # Installed add-ons to the webdriver
 # Scraped 19 attributes for each 'match', using 3 different pages per match
 # Executed scripts through the driver
+# Used selenium to wait for certain elements (usually whichever was first scraped from a page)
 # Made a robust program which deals with changes in the way data is displayed. For example, football matches prior to
 # a certain year did not collect stats such as expected goals, and so the data from those years is ordered differently.
 # (This also explains the relative sparsity of data in later data-entries as compared to earlier)
