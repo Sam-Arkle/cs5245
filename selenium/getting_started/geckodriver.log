@@ -1,0 +1,30 @@
+1666963662044	geckodriver	INFO	Listening on 127.0.0.1:56156
+1666963731431	geckodriver	INFO	Listening on 127.0.0.1:56240
+1666963872260	geckodriver	INFO	Listening on 127.0.0.1:56278
+1666964032171	geckodriver	INFO	Listening on 127.0.0.1:56310
+1666964032683	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56311" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofileb6QimR"
+1666964033209	Marionette	INFO	Marionette enabled
+1666964033217	Marionette	INFO	Listening on port 56322
+Read port: 56322
+WebDriver BiDi listening on ws://127.0.0.1:56311
+1666964033358	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofileb6QimR\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56311/devtools/browser/34784bdb-41a8-4331-b706-bdd6323912e9
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+JavaScript error: resource:///actors/FormValidationChild.jsm, line 183: TypeError: this._element is null
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.python.org."
+1666964036306	Marionette	INFO	Stopped listening on port 56322
+JavaScript error: resource://services-settings/RemoteSettingsWorker.jsm, line 145: Error: Shutdown, aborting read-only worker requests.
+1666964062504	geckodriver	INFO	Listening on 127.0.0.1:56380
+1666964063009	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56381" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofilefpjVQO"
+1666964063396	Marionette	INFO	Marionette enabled
+1666964063403	Marionette	INFO	Listening on port 56388
+Read port: 56388
+WebDriver BiDi listening on ws://127.0.0.1:56381
+1666964063525	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofilefpjVQO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56381/devtools/browser/9ef918b2-0649-431b-9adb-b91125838eba
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+JavaScript error: resource:///actors/FormValidationChild.jsm, line 183: TypeError: this._element is null
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.python.org."
+1666964066392	Marionette	INFO	Stopped listening on port 56388

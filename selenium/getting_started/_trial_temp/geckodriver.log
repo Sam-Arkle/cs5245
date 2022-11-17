@@ -1,0 +1,17 @@
+1668463572488	geckodriver	INFO	Listening on 127.0.0.1:57514
+1668463573011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57515" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofilemP8C0T"
+1668463573475	Marionette	INFO	Marionette enabled
+1668463573483	Marionette	INFO	Listening on port 57525
+Read port: 57525
+WebDriver BiDi listening on ws://127.0.0.1:57515
+1668463573657	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\arklesd\\AppData\\Local\\Temp\\rust_mozprofilemP8C0T\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57515/devtools/browser/8b5a036e-b67e-45dd-81b2-8649a8abda1d
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+Marionette threw an error: TypeError: this.curBrowser.contentBrowser is null
+GeckoDriver.prototype.navigateTo@chrome://remote/content/marionette/driver.js:850:3
+
+1668463580979	Marionette	INFO	Stopped listening on port 57525
+!!! error running onStopped callback: TypeError: callback is not a function
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://services-settings/Utils.jsm, line 239: TypeError: NetworkError: Network request failed
