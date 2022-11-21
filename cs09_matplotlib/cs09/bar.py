@@ -1,33 +1,42 @@
+from statistics import mean
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# def count_produce(row):
-#     # Make a dictionary with month as key and units sold as value? Issue is month repetitions will overwrite.
-#     # Could do a check on whether the key is already in the dicitonary, if not then new. If so then add the values?
-#     # We are accessing one row at a time. Not going to work. Could do a for loop in main, which grabs the number
-#     # of items which fall in the subcategory. Then build a dict.
-#     month = row['Month Sold']
-#
-#     return pass
+# TODO: Look into the warning being produced and try and remove them!
+def main():
+    # desired_category = "Apples, Gold Rush"
+    desired_category = input('Enter SubCategory: ')
+    df = pd.read_csv('food_cleaned.csv')
+    desired_rows = df.loc[df['SubCategory'] == desired_category]
+    desired_rows['Month Sold'] = desired_rows['Month Sold'].map(lambda x: x.lstrip('19-'))
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    desired_rows = desired_rows[desired_rows['Month Sold'].isin(months)]
+    unit = desired_rows['Unit'].iat[0]
+    summed_values = desired_rows.groupby('Month Sold', as_index=False).agg(['sum'])[["Units Sold"]]
+    month_list = summed_values.index.to_list()
+    monthly_value = []
+    month_to_int = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10,
+                    'Nov': 11, 'Dec': 12}
+    for month in month_list:
+        weighted_amount = summed_values.loc[month]['Units Sold'] * month_to_int[month]
+        monthly_value.append(weighted_amount)
+    pd.Categorical(summed_values, categories=months, ordered=True)
+    summed_values = summed_values.sort_values('Month Sold',
+                                              key=lambda x: pd.Categorical(x, categories=months, ordered=True))
+    plt.style.use('dark_background')
+    summed_values.plot.barh()
+    monthly_average = summed_values['Units Sold'].sum()
+    expected_month_purchase = float(sum(monthly_value) / monthly_average)
+
+    plt.xlabel(f'Month (Average {expected_month_purchase:.2f})')
+    plt.xticks(rotation=30, horizontalalignment="center")
+    plt.ylabel('Units Sold')
+    plt.title(f'{unit}, {desired_category}')
+    plt.legend('')
+    plt.show()
 
 
-# TODO: Change from set to user input
-desired_category = "Lettuce, Head"
-df = pd.read_csv('food_cleaned.csv')
-# aggregate_sales = {}
-# aggregate_sales = df.loc[df['SubCategory'] == 'Lettuce, Head'].apply(count_produce,
-#                                                                      axis=1)
-desired_rows = df.loc[df['SubCategory'] == desired_category]
-# for row in range(len(desired_rows)):
-#     month = row[]
-summed_values = desired_rows.groupby('Month Sold', as_index=False).agg(['sum'])[["Units Sold"]]
-month_list = summed_values.index.to_list()
-month_list = [x for x in month_list if not x.startswith('18')]
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-df['months'] = pd.Categorical(df['months'], categories=months, ordered=True)
-df.sort_values(...)  # same as you have now; can use inplace=True
-# ordered_month_dict = {'19-Jan':'', '19:Feb':'','19:Mar':'','19:Apr':'','19:May':'','19:Jun':'','19:Jul':'','19:Aug':'','19:Feb':'','19:Feb':'',}
-# summed_values.plot.bar()
-# TODO: Get this bar chart looking nifty. Still need names, and a key value. What is none none?
-# TODO: Get the months in order and get rid of incorrect years
+if __name__ == 'main':
+    main()
