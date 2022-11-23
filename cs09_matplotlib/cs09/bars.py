@@ -1,3 +1,8 @@
+# Sam Arkle
+# Resources used: https://cs.appstate.edu/~rmp/cs5245/pythondatasciencehandbook.pdf
+# Additional features: Computed expected month of sale for each category. Used the names of months on x-axis.
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1,9 +1,11 @@
-from statistics import mean
+# Sam Arkle
+# Resources used: https://cs.appstate.edu/~rmp/cs5245/pythondatasciencehandbook.pdf
+# Additional features: Computed expected month of sale. Used the names of months on x-axis.
+# Applied a style to the chart
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# TODO: Look into the warning being produced and try and remove them!
 def main():
     # desired_category = "Apples, Gold Rush"
     desired_category = input('Enter SubCategory: ')
