@@ -25,8 +25,8 @@ def main():
     pd.Categorical(summed_values, categories=months, ordered=True)
     summed_values = summed_values.sort_values('Month Sold',
                                               key=lambda x: pd.Categorical(x, categories=months, ordered=True))
-    plt.style.use('dark_background')
-    summed_values.plot.barh()
+    plt.style.use('classic')
+    summed_values.plot.bar()
     monthly_average = summed_values['Units Sold'].sum()
     expected_month_purchase = float(sum(monthly_value) / monthly_average)
 
