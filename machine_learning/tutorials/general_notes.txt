@@ -1,0 +1,20 @@
+The score here is the score, or coefficient of determination, which measures how well a model performs relative to a simple mean of the target values. indicates a perfect match,
+
+indicates the model does no better than simply taking the mean of the data, and negative values mean even worse models. From the scores associated with these two models, we can make an observation that holds more generally:
+
+    For high-bias models, the performance of the model on the validation set is similar to the performance on the training set.
+
+    For high-variance models, the performance of the model on the validation set is far worse than the performance on the training set.
+
+
+WHEN TO USE NAIVE BAYES:
+
+Because naive Bayesian classifiers make such stringent assumptions about data, they will generally not perform as well as a more complicated model. That said, they have several advantages:
+
+    They are extremely fast for both training and prediction
+
+    They provide straightforward probabilistic prediction
+
+    They are often very easily interpretable
+
+    They have very few (if any) tunable parameters

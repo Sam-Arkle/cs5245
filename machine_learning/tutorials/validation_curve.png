@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html style="height:100%; width:100%;">
+<head>
+  <title>Jigsaw</title>
+  <link rel="stylesheet" media="all" href="/assets/application-8b3a372d16e7766cb3d0a198bd3a02a478a2fd7ad7402479d92fe519320d33d5.css" />
+  <script src="/assets/application-6723cfaf91e2396b62736154e76eb73698e33475f149e941c869785a925d9b98.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.js"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="fIskf5F-EyqW6g5PPQX35VZXjn8OyOmO8GfTtLFMMGfYKucoluidDJDSVQTNcPqRP4BLySukBT7kZOfXHo1U8w" />
+    <meta name="robots" content="noindex">
+
+  <style>
+
+
+html {
+  -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+  touch-action: none;
+}
+  </style>
+
+  <script type="text/javascript">
+   if(typeof VST !== 'undefined'){
+     VST.brand                 = "vitalsource";
+     VST.pageViewFlags         = {"dash":true,"epub":true,"pbk":true};
+     VST.requestReferer        = "";
+     VST.pageViewDuration      = 3000;
+     VST.pageViewFlushInterval = 90000
+   }
+  </script>
+</head>
+<body style="height:100%; width:100%; padding:0; margin:0;">
+  
+<script type="text/javascript">
+  if(typeof VST === 'undefined' && typeof parent.VST !== 'undefined'){
+    var VST = parent.VST;
+  }
+
+  if(typeof VST !== 'undefined'){
+    /* VST.window   = VST.window || window;
+     * VST.document = VST.document || document;
+     */
+
+    VST.$(document).ready(function(){
+      var data = {
+        status : 'error',
+        message: 'Unauthorized',
+        code   :  401
+      };
+
+        data.jigsawCode = ''
+
+      // Rich still needs this, I believe
+      VST.fire('page:ready', data);
+      VST.fire('page:load', data);
+
+      if(!VST.window || VST.window !== window) {
+        VST.fire('viewer:create', data);
+      }
+    });
+  }
+</script>
+
+<div><a href="#popup-signin" id="popup-signin">Click to Sign In</a></div>
+
+<script type="text/javascript">
+  var watchForPopupClose = function(popup, callback){
+    var checkIt = window.setInterval(function(){
+      if(popup.closed !== false){
+        window.clearInterval(checkIt);
+        callback();
+      }
+    }, 200);
+  };
+
+  $(document).ready(function(){
+    VST.Jigsaw.trigger('viewer:unauthorized');
+  });
+  $('#popup-signin').click(function(e){
+    e.preventDefault();
+
+    var url        = '/login'
+      , windowName = 'Login'
+      , extra      = 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, height=500, width=600';
+
+    var popup;
+
+    if(typeof VST !== 'undefined' && typeof VST.Jigsaw !== 'undefined'){
+      VST.Jigsaw.socket.topURL(function(topURL){
+        url += '&from='+topURL;
+        popup = window.open(url, windowName, extra);
+        watchForPopupClose(popup, function(){
+          VST.Jigsaw.trigger('viewer:recreate');
+        });
+      });
+    }else{
+      popup = window.open(url, windowName, extra);
+      watchForPopupClose(popup, function(){
+        window.location.reload();
+      });
+    }
+  });
+</script>
+
+<script>(function(){var js = "window['__CF$cv$params']={r:'7750762fbd45ec19',m:'mDXTseBxOjoVQjRfGGJvKiEI1qa5uChyjRTnhuGyvr8-1670281894-0-AcI8UZXE3vkBgvZm/dCHsiLntpu/GMR7qmdQILjDejCSETfAedZdxPnxPyMqYJUcayznwsLot2O/vbHz606wH9wNezgtKt0ANeDzben9GJ61QtQqNq7SQu29OtyC871eVu58wXUCg/uwpBOEBtTe6dCpzjhPV/0NH9Pq5UCWvP6AUSP4hG+eFAXHxEuYP8vbkfJWvRgYjWW+yPjloozi8z/tzl2QVOx3Juav4a1/wx1o',s:[0xb96d3d66eb,0xd3223e1a12],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+
+</html>
